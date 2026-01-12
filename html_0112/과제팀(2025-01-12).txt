@@ -1,0 +1,33 @@
+1. JS 파트
+권용규
+박혜인
+이나현
+이충섭
+전서현
+
+
+
+2. CSS 파트
+   HTML 파트
+남궁능
+이재현
+주민상
+한환희
+홍새한
+
+ㄱ:권용규-남궁능
+ㄴ:박혜인-이재현
+ㄷ:이나현-주민상
+ㄹ:이충섭-한환희
+ㅁ:전서현-홍새한
+왼쪽팀원이 git repository를 생성한다. 오른쪽 사람에게 공유한다.
+
+RPG게임 캐릭터 데이터
+이름, 직업(전사,마법사,궁수,도적), 성별(남자,여자), HP, MP, STR, INT, DEX, LUX, 생일
+name, cls, sx, hp, mp, str, int, dex, lux, birthDate
+
+RPG게임 캐릭터 기능
+출력 print~~()하는 기능
+추가 insert~~(), 수정 update~~(), 삭제 delete~~() 기능
+공격기능 A.attackStr(B); A캐릭터 B캐릭터 STR을 이용하여 공격하면 B캐릭터는 HP가 감소한다.
+마법공격 A.attackInt(B); A캐릭터 B캐릭터 INT을 이용하여 공격하면 B캐릭터는 HP가 감소한다. A캐릭터는 MP가 감소한다.

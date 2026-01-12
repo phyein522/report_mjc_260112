@@ -4,9 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPG</title>
+    <link rel="stylesheet" href="./css/0112.css" />
 </head>
 <body>
-    <h1>실험중..</h1>
+    <header>
+         <h1>게임 캐릭터 관리</h1>
+   <main>
+      <section id="inputSection">
+        <fieldset class="inputField">
+          <legend>캐릭터 데이터</legend>
+          <div class="inputItem">
+            <div class="text-wrapper">캐릭터 닉네임</div>
+            <div class="div">
+              <input type="hidden" id="id" value="0" />
+              <input type="text" id="name" class="inputText" />
+            </div>
+          </div>
+          <div class="inputItem">
+            <div class="text-wrapper">성별</div>
+            <div class="div">
+              <select id="sx" class="selectCombo">
+                <option value="man">남성</option>
+                <option value="woman">여성</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputItem">
+            <div class="text-wrapper">직업</div>
+            <div class="div">
+              <select id="cls" class="selectCombo">
+                <option value="warrior">전사</option>
+                <option value="wizard">마법사</option>
+                <option value="Archer">궁수</option>
+                <option value="bandit">도적</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="inputItem">
+            <div class="text-wrapper">HP</div>
+            <div class="div">
+              <input type="number" id="hp" class="inputNumber" />
+            </div>
+
+            <div class="inputItem">
+            <div class="text-wrapper">MP</div>
+            <div class="div">
+              <input type="number" id="mp" class="inputNumber" />
+            </div>
+            <div class="inputItem">
+            <div class="text-wrapper">STR</div>
+            <div class="div">
+              <input type="number" id="str" class="inputNumber" />
+            </div>
+            <div class="inputItem">
+            <div class="text-wrapper">INT</div>
+            <div class="div">
+              <input type="number" id="int" class="inputNumber" />
+            </div>
+            <div class="inputItem">
+            <div class="text-wrapper">DEX</div>
+            <div class="div">
+              <input type="number" id="dex" class="inputNumber" />
+            </div>
+            <div class="inputItem">
+            <div class="text-wrapper">LUX</div>
+            <div class="div">
+              <input type="number" id="lux" class="inputNumber" />
+            </div>
+          </div>
+<div>
+          <label for="date">캐릭터 생년 월일</label>
+<input type="date"
+        id="date"
+        max="2077-06-20"
+        min="2077-06-05"
+        value="2025-06-15"> 
+        </div>
+
+
+          <!-- <div class="inputItem">
+            <div class="text-wrapper">이미지주소</div>
+            <div class="div">
+              <input type="text" id="imgUrl" class="inputText" />
+            </div>
+          </div>
+          <div class="inputImage">
+            <img
+              class="showImage"
+              src="https://pimg.mk.co.kr/news/cms/202504/06/news-p.v1.20250404.ad221f845db2489a86c2ff50f32c53fa_P1.png"
+              alt="게임 대표 이미지"
+            /> -->
+
+          </div>
+          <div class="inputButtons">
+            <div class="text-wrapper">
+              <button type="button" class="btnAdd">캐릭터 추가</button>
+
+            </div>
+            <div class="text-wrapper">
+              <button type="button" class="btnUpt" >캐릭터   수정</button>
+            </div>
+            <div class="text-wrapper">
+              <button type="button" class="btnDel">캐릭터 삭제</button>
+            </div>
+          </div>
+        </fieldset>
+      </section>
+      <section id="listSection">
+        <fieldset class="listField">
+          <legend>캐릭터 목록</legend>
+          <div class="listTitleRow">
+            <div class="listItem">
+              <div class="itemTitle text-wrapper">닉네임</div>
+            </div>
+            <div class="listItem">
+              <div class="itemTitle text-wrapper">성별</div>
+            </div>
+            <div class="listItem">
+              <div class="itemTitle text-wrapper">직업</div>
+            </div>
+            <div class="listItem">
+              <div class="itemTitle text-wrapper">능력치</div>
+            </div>
+        
+          </div>
+          <div class="listDataBlock">
+            <div class="listDataRow">
+              <div class="listItem">
+                <div class="itemData text-wrapper">레이싱</div>
+              </div>
+              <div class="listItem">
+                <div class="itemData text-wrapper">15세</div>
+              </div>
+              <div class="listItem">
+                <div class="itemData text-wrapper">마리오 카트</div>
+              </div>
+            </div>
+          </div>
+
+         
+        </fieldset>
+      </section>
+    </main>
+    <footer>
+      <div>made 2026-01-12</div>
+    </footer>
+
 </body>
 </html> 
 <script src=""></script>
