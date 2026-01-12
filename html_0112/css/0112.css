@@ -120,4 +120,17 @@
  width: 100px;
   text-align : center;
   background-color: rgb(255, 244, 127);
+  
+}
+
+.HPbar {
+     width: 300px; 
+ 
+  accent-color: red;
+}
+
+
+.MPbar {
+ width: 300px; 
+  accent-color: blue;
 }

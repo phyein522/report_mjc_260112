@@ -23,12 +23,24 @@
           <div class="inputItem">
             <div class="text-wrapper">성별</div>
             <div class="div">
-              <select id="sx" class="selectCombo">
-                <option value="M">남성</option>
-                <option value="W">여성</option>
-              </select>
+              <div id="sx" class="selectCombo">
+                
+
+                <label style="display: inline-block; margin-right: 1rem;">
+                <input type="radio" name="gender" value="M"> 남성
+              </label>
+              <label style="display: inline-block;">
+                <input type="radio" name="gender" value="W"> 여성
+
+              </label>
+              </div>
             </div>
           </div>
+
+          
+          
+             
+            
           <div class="inputItem">
             <div class="text-wrapper">직업</div>
             <div class="div">
@@ -51,38 +63,41 @@
           <div class="inputImage">
             <img
               class="showImage"
-              src="https://i.namu.wiki/i/varbt_DtFC_nSI_-5oPXGVsylpmQr-My7b_pFnO36qOEbIjhcQT3uUrTEQGIaAKlrHKlZc_MW6aEgyyT_mLhMg.webp"
+              src="https://i.namu.wiki/i/mD0hjSfGZiYLxny86p1-MqpLphYPoQ6fuErnlH1rVhHdwcDoVxb-BDVZBLLrB_Ll2lSiLd6WJGL3s4tcHE6e-KPFu8z2cVryYNL0fMjslduRc_nDT8buagyTLm0dV0e65O6x9VQrwA6OzInWY_dSoA.webp"
               alt="게임 대표 이미지"
             />
 
           <div class="inputItem">
-            <div class="text-wrapper">HP</div>
+            <div class="text-wrapper">❤️HP</div>
             <div class="div">
-              <input type="number" id="hp" class="inputNumber" />
+              
+              <input type="range" id="hp" min="0" max="100" value="50" step="10" class="HPbar">
             </div>
 
             <div class="inputItem">
-            <div class="text-wrapper">MP</div>
+            <div class="text-wrapper">🔮MP</div>
             <div class="div">
-              <input type="number" id="mp" class="inputNumber" />
+              
+              <input type="range" id="mp" min="0" max="100" value="50" step="10" class="MPbar">
+              
             </div>
             <div class="inputItem">
-            <div class="text-wrapper">STR</div>
+            <div class="text-wrapper">💪STR</div>
             <div class="div">
               <input type="number" id="str" class="inputNumber" />
             </div>
             <div class="inputItem">
-            <div class="text-wrapper">INT</div>
+            <div class="text-wrapper">📘INT</div>
             <div class="div">
               <input type="number" id="int" class="inputNumber" />
             </div>
             <div class="inputItem">
-            <div class="text-wrapper">DEX</div>
+            <div class="text-wrapper">🛡️DEX</div>
             <div class="div">
               <input type="number" id="dex" class="inputNumber" />
             </div>
             <div class="inputItem">
-            <div class="text-wrapper">LUX</div>
+            <div class="text-wrapper">🍀LUX</div>
             <div class="div">
               <input type="number" id="lux" class="inputNumber" />
             </div>
@@ -92,9 +107,9 @@
            <label for="date" class="text-wrapper">캐릭터 생년 월일</label>
 <input type="date"
         id="date"
-        max="2077-06-20"
-        min="2077-06-05"
-        value="2025-06-15"> 
+        max="2026-01-12"
+        min="1920-06-05"
+        value="2000-01-01"> 
       
 
 <div>
@@ -125,7 +140,7 @@
               </select>
               
             </div>
-            <button type="button" class="atkbtn1">공격하기</button>
+            <button type="button" class="atkbtn1">🗡️공격하기</button>
           </div>
 
           <div class="inputItem">
@@ -136,18 +151,18 @@
                 <option value="W2">마법 공격 대상 2</option>
               </select>
             </div>
-            <button type="button" class="atkbtn2">공격하기</button>
+            <button type="button" class="atkbtn2">🪄공격하기</button>
           </div>
 
           <div class="inputItem">
             <div class="text-attack">아이템 사용하기</div>
             <div class="div">
               <select id="attack" class="selectCombo">
-                <option value="T1">연막탄 투척 대상 1</option>
-                <option value="T2">연막탄 투척 대상 2</option>
+                <option value="T1">항아리 투척 대상 1</option>
+                <option value="T2">항아리 투척 대상 2</option>
               </select>
             </div>
-            <button type="button" class="atkbtn3" >사용하기</button>
+            <button type="button" class="atkbtn3" >🧪사용하기</button>
           </div>
 
         
