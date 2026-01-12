@@ -90,7 +90,7 @@ class Character {
 	checkInputData(...noCheck) {
 		if(!noCheck.includes("id")) {
 			if (this.#characters.findIndex(character => character.id == $("#id").val()) == -1) {
-				alert(`게임 목록에서 선택한 후 수정/삭제하세요.`);
+				alert(`게임 목록에서 선택한 후 수정/삭제/공격하세요.`);
 				return false;
 			}
 		}
@@ -295,22 +295,37 @@ class Character {
 		return html;
 	}
 
-	printLog() {
-		let log = `
-${$("#id").val()}
-${$("#name").val()}
-${$("#sx").val()}
-${$("#cls").val()}
-${$("#hp").val()}
-${$("#mp").val()}
-${$("#str").val()}
-${$("#int").val()}
-${$("#dex").val()}
-${$("#lux").val()}
-${$("#birthDate").val()}
-${$("#imgUrl").val()}
-`;
-		console.log(log);
+	attackSTR() {
+		if(this.checkInputData() == false) {
+			return;
+		}
+		let attacker = this.#characters.findIndex(character => character.id == Number.parseInt($("#id").val()));
+		let targetId = $("#attackStr").val();
+		let targetCharacter = this.#characters.findIndex(character => character.id == targetId);
+		if (this.#characters[targetCharacter].hp - this.#characters[attacker].str < 0) {
+			this.#characters[targetCharacter].hp = 0;
+		} else {
+			this.#characters[targetCharacter].hp -= this.#characters[attacker].str;
+		}
+		this.printList();
+	}
+	
+	attackINT() {
+		if(this.checkInputData() == false) {
+			return;
+		}
+		let attacker = this.#characters.findIndex(character => character.id == Number.parseInt($("#id").val()));
+		let targetId = $("#attackInt").val();
+		let targetCharacter = this.#characters.findIndex(character => character.id == targetId);
+		if(this.#characters[attacker].mp - 5 >= 0) {
+			if (this.#characters[targetCharacter].hp - this.#characters[attacker].int < 0) {
+				this.#characters[targetCharacter].hp = 0;
+			} else {
+				this.#characters[targetCharacter].hp -= this.#characters[attacker].int;
+			}
+			this.#characters[attacker].mp -= 5;
+		}
+		this.printList();
 	}
 }
 
@@ -318,6 +333,7 @@ $(() => {
 	let rpg = new Character();
 	rpg.printList();
 	rpg.printAttackList();
+	rpg.clearInput();
 
 	$(".btnAdd").click((e) => {
 		e.preventDefault();
@@ -341,6 +357,18 @@ $(() => {
 		e.preventDefault();
 		let getId = $(e.currentTarget).children().first().text() * 1;
 		rpg.setData2InputBox(getId);
+	});
+
+	$(".atkbtn1").click((e) => {
+		e.preventDefault();
+		rpg.attackSTR();
+	});
+	$(".atkbtn2").click((e) => {
+		e.preventDefault();
+		rpg.attackINT();
+	});
+	$(".atkbtn3").click((e) => {
+		e.preventDefault();
 	});
 });
 
