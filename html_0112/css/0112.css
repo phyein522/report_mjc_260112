@@ -1,8 +1,100 @@
+.btnDel {
+  padding: 8px;
+  margin: 2px;
+
+  text-align : center;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+}
+.btnUpt {
+  padding: 8px;
+  margin: 2px;
+ width: 200px;
+  text-align : center;
+  background-color: rgb(255, 255, 255);
+}
+.btnAdd {
+  padding: 8px;
+  margin: 2px;
+  width: 200px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+}
+
+.inputField {
+  background-color: rgb(254, 249, 226);
+}
+
+.inputField legend {
+  background-color: white;
+  border: 1px solid     black;
+}
+
+.inputItem {
+  display: grid;
+  grid-template-columns: 150px auto;
+  /* justify-content: space-between; */
+}
+
+.inputText {
+  width: 33%;
+  height: 54%;
+}
+
+.text-wrapper {
+  border: 1px solid black;
+  margin: 2px;
+  
+}
 
 
 
+.selectCombo {
+  width: 20%;
+  height: 85%;
+}
 
+.inputImage {
+  display: block;
+}
+.showImage {
+  max-width: 100%;
+}
 
+.inputButtons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+    
+}
 
+.listField legend {
+  background-color: white;
+  border: 1px solid black;
+}
 
+.listTitleRow {
+  display: grid;
+  grid-template-columns: 120px 120px 120px 200px auto;
+}
 
+.listDataRow {
+  display: grid;
+  grid-template-columns: 120px 120px 120px 200px auto;
+} 
+
+.text-wrapper {
+  border: 1px solid black;
+  margin: 2px;
+  
+}
+
+.text-attack {
+  border: 1px solid black;
+  margin: 2px;
+  background-color: rgba(255, 0, 0, 0.47);
+}
