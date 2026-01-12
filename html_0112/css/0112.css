@@ -34,7 +34,7 @@
   font-weight: bold;
   box-shadow:.4rem .3rem 0.7rem #BEC5D0,
              -.2rem -.2rem .4rem #FBFBFB;
-             border-radius: 10px;
+    border-radius: 10px;
   
 }
 
@@ -59,6 +59,7 @@
 .inputField legend {
   background-color: white;
   border: 1px solid     black;
+  padding: 2px;
 }
 
 .inputItem {
@@ -72,17 +73,11 @@
   height: 54%;
 }
 
-.text-wrapper {
-  border: 1px solid black;
-  margin: 2px;
-  
-}
-
-
-
 .selectCombo {
+   
   width: 20%;
-  height: 85%;
+    height: 90%;
+  
 }
 
 .inputImage {
@@ -97,6 +92,11 @@
   grid-template-columns: repeat(3, 1fr);
     
 }
+.listField {
+  background-color: rgb(254, 249, 226);
+  border: 1px solid black;
+}
+
 
 .listField legend {
   background-color: white;
@@ -116,13 +116,18 @@
 .text-wrapper {
   border: 1px solid black;
   margin: 2px;
-  
+  background-color: rgba(255, 255, 255, 0.852);
 }
+.margin {
+  margin: 2px;
+}
+
 
 .text-attack {
   border: 1px solid black;
   margin: 2px;
   background-color: rgba(255, 255, 255, 0.47);
+  
   
 }
 
@@ -136,19 +141,20 @@
   box-shadow:.4rem .3rem 0.7rem #BEC5D0,
              -.2rem -.2rem .4rem #FBFBFB;
              border-radius: 10px;
-  
+
+  display: flex;
 }
 .atkbtn2 {
   padding: 8px;
   margin: 2px;
  width: 100px;
   text-align : center;
-  background-color: rgb(114, 114, 255);
+  
   font-weight: bold;
   box-shadow:.4rem .3rem 0.7rem #BEC5D0,
              -.2rem -.2rem .4rem #FBFBFB;
              border-radius: 10px;
-  
+  background-color: #7fccde;
 }
 .atkbtn3 {
   padding: 8px;
@@ -160,6 +166,7 @@
   box-shadow:.4rem .3rem 0.7rem #BEC5D0,
              -.2rem -.2rem .4rem #FBFBFB;
              border-radius: 10px;
+             
   
   
 }
@@ -174,4 +181,33 @@
 .MPbar {
  width: 300px; 
   accent-color: blue;
+}
+
+
+.attackRow {
+  display: grid;
+  grid-template-columns: 120px 1fr 120px;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+  width: 105%;
+}
+
+.attackTitle {
+  border: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.47);
+  padding: 6px;
+}
+
+.attackSelect {
+  width: 12100%;
+  height: 38px;
+}
+
+
+.atkbtn1,
+.atkbtn2,
+.atkbtn3 {
+  margin-left: 161px;   /* 버튼을 오른쪽으로 */
+  margin-top: 0px;     /* 위아래 조정 */
 }

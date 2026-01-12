@@ -106,77 +106,58 @@
           
            <label for="date" class="text-wrapper">캐릭터 생년 월일</label>
 <input type="date"
-        id="birthDate"
+        id="date"
         max="2026-01-12"
         min="1920-06-05"
         value="2000-01-01"> 
       
 
 <div>
-         
+         <div>
 <div class="inputButtons">
-            <div class="text-wrapper">
+            <div class="margin">
               <button type="button" class="btnAdd">캐릭터 추가</button>
-
             </div>
-            <div class="text-wrapper">
+            <div class="margin">
               <button type="button" class="btnUpt" >캐릭터 수정</button>
             </div>
-            <div class="text-wrapper">
+            <div class="margin">
               <button type="button" class="btnDel">캐릭터 삭제</button>
             </div>
+</div>
+<div class="attackArea">
+<!-- 물리 공격 -->
+<div class="attackRow">
+  <div class="attackTitle">물리 공격</div>
+  <select id="attackStr" class="attackSelect">
+    <option value="M1">물리 공격 대상 1</option>
+    <option value="M2">물리 공격 대상 2</option>
+  </select>
+  <button type="button" class="atkbtn1">🗡️ 공격하기</button>
+</div>
 
+<!-- 마법 공격 -->
+<div class="attackRow">
+  <div class="attackTitle">마법 공격</div>
+  <select id="attackInt" class="attackSelect">
+    <option value="W1">마법 공격 대상 1</option>
+    <option value="W2">마법 공격 대상 2</option>
+  </select>
+  <button type="button" class="atkbtn2">🪄 공격하기</button>
+</div>
 
-
-
-<div class="inputItem">
-            <div class="text-attack">물리 공격</div>
-            <div class="div">
-              <select id="attackStr" class="selectCombo">
-                
-                <option value="M1">물리 공격 대상 1</option>
-                <option value="M2">물리 공격 대상 2</option>
-                
-              </select>
-              
-            </div>
-            <button type="button" class="atkbtn1">🗡️공격하기</button>
-          </div>
-
-          <div class="inputItem">
-            <div class="text-attack">마법 공격</div>
-            <div class="div">
-              <select id="attackInt" class="selectCombo">
-                <option value="W1">마법 공격 대상 1</option>
-                <option value="W2">마법 공격 대상 2</option>
-              </select>
-            </div>
-            <button type="button" class="atkbtn2">🪄공격하기</button>
-          </div>
-
-          <div class="inputItem">
-            <div class="text-attack">아이템 사용하기</div>
-            <div class="div">
-              <select id="attackItem" class="selectCombo">
-                <option value="T1">항아리 투척 대상 1</option>
-                <option value="T2">항아리 투척 대상 2</option>
-              </select>
-            </div>
-            <button type="button" class="atkbtn3" >🧪사용하기</button>
-          </div>
-
-        
-
-
-          </div>
+<!-- 아이템 사용 -->
+<div class="attackRow">
+  <div class="attackTitle">아이템 사용</div>
+  <select id="attack" class="attackSelect">
+    <option value="T1">항아리 투척 대상 1</option>
+    <option value="T2">항아리 투척 대상 2</option>
+  </select>
+  <button type="button" class="atkbtn3">🧪 사용하기</button>
+</div>
+            </div>  
           
-
-          </div>
-          
-          
-
-          
-
+</div>
         </fieldset>
         
       </section>
