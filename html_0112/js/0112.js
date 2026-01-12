@@ -161,6 +161,7 @@ class Character {
 	}
 
 	clearInput() {
+		$("#id").val(-1);
 		$("#name").val("");
 		$("#sx").val("M");
 		$("#cls").val("W");
@@ -234,8 +235,19 @@ class Character {
 		this.printImg();
 	}
 
+	delCharacter() {
+		if (this.checkInputData() === false) {
+			return;
+		}
+		this.#characters = this.#characters.filter(character => character.id != Number.parseInt($("#id").val()));
+		this.printList();
+		this.clearInput();
+		this.printImg();
+	}
+
 	setData2InputBox(getId) {
 		let findCharacter = this.#characters.find(character => character.id == getId);
+		$("#id").val(findCharacter.id);
 		$("#name").val(findCharacter.name);
 		$("#sx").val(findCharacter.sx);
 		$("#cls").val(findCharacter.cls);
@@ -249,6 +261,24 @@ class Character {
 		$("#imgUrl").val(findCharacter.imgUrl);
 		$(".showImage").attr("src", findCharacter.imgUrl);
 		this.printImg();
+	}
+
+	printLog() {
+		let log = `
+${$("#id").val()}
+${$("#name").val()}
+${$("#sx").val()}
+${$("#cls").val()}
+${$("#hp").val()}
+${$("#mp").val()}
+${$("#str").val()}
+${$("#int").val()}
+${$("#dex").val()}
+${$("#lux").val()}
+${$("#date").val()}
+${$("#imgUrl").val()}
+`;
+		console.log(log);
 	}
 }
 
@@ -266,6 +296,7 @@ $(() => {
 	});
 	$(".btnDel").click((e) => {
 		e.preventDefault();
+		rpg.delCharacter();
 	});
 
 	$("#imgUrl").blur((e) => {
