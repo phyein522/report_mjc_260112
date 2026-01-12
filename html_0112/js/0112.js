@@ -12,7 +12,21 @@ class Character {
 			dex: 15,
 			lux: 7,
 			birthDate: "2026-01-12",
-			imgUrl: "https://i.namu.wiki/i/varbt_DtFC_nSI_-5oPXGVsylpmQr-My7b_pFnO36qOEbIjhcQT3uUrTEQGIaAKlrHKlZc_MW6aEgyyT_mLhMg.webp"
+			imgUrl: "https://i.namu.wiki/i/mD0hjSfGZiYLxny86p1-MqpLphYPoQ6fuErnlH1rVhHdwcDoVxb-BDVZBLLrB_Ll2lSiLd6WJGL3s4tcHE6e-KPFu8z2cVryYNL0fMjslduRc_nDT8buagyTLm0dV0e65O6x9VQrwA6OzInWY_dSoA.webp"
+		},
+		{
+			id: 1,
+			name: "간zㅣ폭풍",
+			cls: "M",
+			sx: "M",
+			hp: 11,
+			mp: 50,
+			str: 5,
+			int: 99,
+			dex: 7,
+			lux: 15,
+			birthDate: "2026-01-12",
+			imgUrl: "https://i.namu.wiki/i/mD0hjSfGZiYLxny86p1-MqpLphYPoQ6fuErnlH1rVhHdwcDoVxb-BDVZBLLrB_Ll2lSiLd6WJGL3s4tcHE6e-KPFu8z2cVryYNL0fMjslduRc_nDT8buagyTLm0dV0e65O6x9VQrwA6OzInWY_dSoA.webp"
 		}
 	];
 
@@ -88,9 +102,9 @@ class Character {
 			}
 		}
 		if(!noCheck.includes("sx")) {
-			if ($("#sx").val() != "M" && $("#sx").val() != "W") {
+			if ($("input[name='gender']:checked").val() != "M" && $("input[name='gender']:checked").val() != "W") {
 				alert(`남성 / 여성 중에서 성별을 선택하세요.`);
-				$("#sx").focus();
+				$("input[name='gender']").focus();
 				return false;
 			}
 		}
@@ -144,9 +158,9 @@ class Character {
 			}
 		}
 		if(!noCheck.includes("birthDate")) {
-			if($("#date").val() < "1900-01-01" || $("#date").val() > "2100-01-01") {
+			if($("#birthDate").val() < "1900-01-01" || $("#birthDate").val() > "2100-01-01") {
 				alert(`날짜는 1900-01-01 ~ 2100-01-01 중에서 입력해주세요.`);
-				$("#date").focus();
+				$("#birthDate").focus();
 				return false;
 			}
 		}
@@ -163,7 +177,7 @@ class Character {
 	clearInput() {
 		$("#id").val(-1);
 		$("#name").val("");
-		$("#sx").val("M");
+		$("input[name='gender']").prop("checked", false);
 		$("#cls").val("W");
 		$("#hp").val(1);
 		$("#mp").val(1);
@@ -171,7 +185,7 @@ class Character {
 		$("#int").val(1);
 		$("#dex").val(1);
 		$("#lux").val(1);
-		$("#date").val("2026-01-12");
+		$("#birthDate").val("2026-01-12");
 		$("#imgUrl").val("");
 		$(".showImage").attr("src", "");
 	}
@@ -195,7 +209,7 @@ class Character {
 		let newCharacter = {
 			id: newId,
 			name: $("#name").val(),
-			sx: $("#sx").val(),
+			sx: $("input[name='gender']:checked").val(),
 			cls: $("#cls").val(),
 			hp: Number.parseInt($("#hp").val()),
 			mp: Number.parseInt($("#mp").val()),
@@ -203,12 +217,14 @@ class Character {
 			int: Number.parseInt($("#int").val()),
 			dex: Number.parseInt($("#dex").val()),
 			lux: Number.parseInt($("#lux").val()),
-			birthDate: $("#date").val(),
+			birthDate: $("#birthDate").val(),
 			imgUrl: $("#imgUrl").val()
 		};
 		this.#characters.push(newCharacter);
 		this.printList();
 		this.clearInput();
+		this.printImg();
+		this.printAttackList();
 	}
 
 	uptCharacter() {
@@ -218,7 +234,7 @@ class Character {
 		let uptCharacter = {
 			id: Number.parseInt($("#id").val()),
 			name: $("#name").val(),
-			sx: $("#sx").val(),
+			sx: $("input[name='gender']:checked").val(),
 			cls: $("#cls").val(),
 			hp: Number.parseInt($("#hp").val()),
 			mp: Number.parseInt($("#mp").val()),
@@ -226,13 +242,14 @@ class Character {
 			int: Number.parseInt($("#int").val()),
 			dex: Number.parseInt($("#dex").val()),
 			lux: Number.parseInt($("#lux").val()),
-			birthDate: $("#date").val(),
+			birthDate: $("#birthDate").val(),
 			imgUrl: $("#imgUrl").val()
 		};
 		this.#characters[Number.parseInt($("#id").val())] = uptCharacter;
 		this.printList();
 		this.clearInput();
 		this.printImg();
+		this.printAttackList();
 	}
 
 	delCharacter() {
@@ -243,13 +260,14 @@ class Character {
 		this.printList();
 		this.clearInput();
 		this.printImg();
+		this.printAttackList();
 	}
 
 	setData2InputBox(getId) {
 		let findCharacter = this.#characters.find(character => character.id == getId);
 		$("#id").val(findCharacter.id);
 		$("#name").val(findCharacter.name);
-		$("#sx").val(findCharacter.sx);
+		$("input[name='gender'][value='" + findCharacter.sx + "']").prop("checked", true);
 		$("#cls").val(findCharacter.cls);
 		$("#hp").val(findCharacter.hp);
 		$("#mp").val(findCharacter.mp);
@@ -257,10 +275,24 @@ class Character {
 		$("#int").val(findCharacter.int);
 		$("#dex").val(findCharacter.dex);
 		$("#lux").val(findCharacter.lux);
-		$("#date").val(findCharacter.birthDate);
+		$("#birthDate").val(findCharacter.birthDate);
 		$("#imgUrl").val(findCharacter.imgUrl);
 		$(".showImage").attr("src", findCharacter.imgUrl);
 		this.printImg();
+	}
+
+	printAttackList() {
+		$("#attackStr").empty();
+		this.#characters.forEach(character => $("#attackStr").append(this.printOption(character)));
+		$("#attackInt").empty();
+		this.#characters.forEach(character => $("#attackInt").append(this.printOption(character)));
+		$("#attackItem").empty();
+		this.#characters.forEach(character => $("#attackItem").append(this.printOption(character)));
+	}
+
+	printOption(character) {
+		let html = `<option value="${character.id}">${character.name}</option>`;
+		return html;
 	}
 
 	printLog() {
@@ -275,7 +307,7 @@ ${$("#str").val()}
 ${$("#int").val()}
 ${$("#dex").val()}
 ${$("#lux").val()}
-${$("#date").val()}
+${$("#birthDate").val()}
 ${$("#imgUrl").val()}
 `;
 		console.log(log);
@@ -285,6 +317,7 @@ ${$("#imgUrl").val()}
 $(() => {
 	let rpg = new Character();
 	rpg.printList();
+	rpg.printAttackList();
 
 	$(".btnAdd").click((e) => {
 		e.preventDefault();
