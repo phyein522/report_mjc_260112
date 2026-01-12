@@ -24,8 +24,8 @@
             <div class="text-wrapper">성별</div>
             <div class="div">
               <select id="sx" class="selectCombo">
-                <option value="man">남성</option>
-                <option value="woman">여성</option>
+                <option value="M">남성</option>
+                <option value="W">여성</option>
               </select>
             </div>
           </div>
@@ -33,14 +33,28 @@
             <div class="text-wrapper">직업</div>
             <div class="div">
               <select id="cls" class="selectCombo">
-                <option value="warrior">전사</option>
-                <option value="wizard">마법사</option>
-                <option value="Archer">궁수</option>
-                <option value="bandit">도적</option>
+                <option value="W">전사</option>
+                <option value="M">마법사</option>
+                <option value="A">궁수</option>
+                <option value="B">도적</option>
 
               </select>
             </div>
           </div>
+
+          <div class="inputItem">
+            <div class="text-wrapper">캐릭터 이미지 주소</div>
+            <div class="div">
+              <input type="text" id="imgUrl" class="inputText" />
+            </div>
+          </div>
+          <div class="inputImage">
+            <img
+              class="showImage"
+              src="https://i.namu.wiki/i/varbt_DtFC_nSI_-5oPXGVsylpmQr-My7b_pFnO36qOEbIjhcQT3uUrTEQGIaAKlrHKlZc_MW6aEgyyT_mLhMg.webp"
+              alt="게임 대표 이미지"
+            />
+
           <div class="inputItem">
             <div class="text-wrapper">HP</div>
             <div class="div">
@@ -83,18 +97,7 @@
         </div>
 
 
-          <!-- <div class="inputItem">
-            <div class="text-wrapper">이미지주소</div>
-            <div class="div">
-              <input type="text" id="imgUrl" class="inputText" />
-            </div>
-          </div>
-          <div class="inputImage">
-            <img
-              class="showImage"
-              src="https://pimg.mk.co.kr/news/cms/202504/06/news-p.v1.20250404.ad221f845db2489a86c2ff50f32c53fa_P1.png"
-              alt="게임 대표 이미지"
-            /> -->
+          
 
           </div>
           <div class="inputButtons">
@@ -103,7 +106,7 @@
 
             </div>
             <div class="text-wrapper">
-              <button type="button" class="btnUpt" >캐릭터   수정</button>
+              <button type="button" class="btnUpt" >캐릭터 수정</button>
             </div>
             <div class="text-wrapper">
               <button type="button" class="btnDel">캐릭터 삭제</button>
@@ -146,7 +149,7 @@
             </div>
           </div>
 
-         
+          
         </fieldset>
       </section>
     </main>
