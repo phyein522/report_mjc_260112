@@ -96,5 +96,28 @@
 .text-attack {
   border: 1px solid black;
   margin: 2px;
-  background-color: rgba(255, 0, 0, 0.47);
+  background-color: rgba(255, 255, 255, 0.47);
+  
+}
+
+.atkbtn1 {
+  padding: 8px;
+  margin: 2px;
+ width: 100px;
+  text-align : center;
+  background-color: rgb(255, 108, 108);
+}
+.atkbtn2 {
+  padding: 8px;
+  margin: 2px;
+ width: 100px;
+  text-align : center;
+  background-color: rgb(114, 114, 255);
+}
+.atkbtn3 {
+  padding: 8px;
+  margin: 2px;
+ width: 100px;
+  text-align : center;
+  background-color: rgb(255, 244, 127);
 }
