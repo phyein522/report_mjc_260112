@@ -224,8 +224,7 @@ class Character {
 		this.printList();
 		this.clearInput();
 		this.printImg();
-		this.printAttackStrList();
-		this.printAttackIntList()
+		this.printAttackList();
 	}
 
 	uptCharacter() {
@@ -250,8 +249,7 @@ class Character {
 		this.printList();
 		this.clearInput();
 		this.printImg();
-		this.printAttackStrList();
-		this.printAttackIntList();
+		this.printAttackList();
 	}
 
 	delCharacter() {
@@ -262,8 +260,7 @@ class Character {
 		this.printList();
 		this.clearInput();
 		this.printImg();
-		this.printAttackStrList();
-		this.printAttackIntList();
+		this.printAttackList();
 	}
 
 	setData2InputBox(getId) {
@@ -284,14 +281,13 @@ class Character {
 		this.printImg();
 	}
 
-	printAttackStrList() {
+	printAttackList() {
 		$("#attackStr").empty();
 		this.#characters.forEach(character => $("#attackStr").append(this.printOption(character)));
-	}
-
-	printAttackIntList() {
 		$("#attackInt").empty();
 		this.#characters.forEach(character => $("#attackInt").append(this.printOption(character)));
+		$("#attackItem").empty();
+		this.#characters.forEach(character => $("#attackItem").append(this.printOption(character)));
 	}
 
 	printOption(character) {
@@ -321,8 +317,7 @@ ${$("#imgUrl").val()}
 $(() => {
 	let rpg = new Character();
 	rpg.printList();
-	rpg.printAttackStrList();
-	rpg.printAttackIntList();
+	rpg.printAttackList();
 
 	$(".btnAdd").click((e) => {
 		e.preventDefault();
