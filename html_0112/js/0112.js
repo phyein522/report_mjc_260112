@@ -172,7 +172,10 @@ class Character {
 		$("#lux").val(1);
 		$("#date").val("2026-01-12");
 		$("#imgUrl").val("");
+		$(".showImage").attr("src", "");
+	}
 
+	printImg() {
 		$(".showImage").one("error", (e) => {
 			e.preventDefault();
 			$(".showImage").css("display", "none");
@@ -221,6 +224,11 @@ $(() => {
 	});
 	$(".btnDel").click((e) => {
 		e.preventDefault();
+	});
+
+	$("#imgUrl").blur((e) => {
+		e.preventDefault();
+		rpg.printImg();
 	});
 });
 
