@@ -27,6 +27,34 @@ class Character {
 			lux: 15,
 			birthDate: "2026-01-12",
 			imgUrl: "https://i.namu.wiki/i/mD0hjSfGZiYLxny86p1-MqpLphYPoQ6fuErnlH1rVhHdwcDoVxb-BDVZBLLrB_Ll2lSiLd6WJGL3s4tcHE6e-KPFu8z2cVryYNL0fMjslduRc_nDT8buagyTLm0dV0e65O6x9VQrwA6OzInWY_dSoA.webp"
+		},
+		{
+			id: 2,
+			name: "test01",
+			cls: "B",
+			sx: "M",
+			hp: 100,
+			mp: 100,
+			str: 5,
+			int: 5,
+			dex: 5,
+			lux: 5,
+			birthDate: "2026-01-12",
+			imgUrl: "https://i.namu.wiki/i/mD0hjSfGZiYLxny86p1-MqpLphYPoQ6fuErnlH1rVhHdwcDoVxb-BDVZBLLrB_Ll2lSiLd6WJGL3s4tcHE6e-KPFu8z2cVryYNL0fMjslduRc_nDT8buagyTLm0dV0e65O6x9VQrwA6OzInWY_dSoA.webp"
+		},
+		{
+			id: 3,
+			name: "test02",
+			cls: "A",
+			sx: "M",
+			hp: 100,
+			mp: 100,
+			str: 2,
+			int: 2,
+			dex: 2,
+			lux: 2,
+			birthDate: "2026-01-12",
+			imgUrl: "https://i.namu.wiki/i/mD0hjSfGZiYLxny86p1-MqpLphYPoQ6fuErnlH1rVhHdwcDoVxb-BDVZBLLrB_Ll2lSiLd6WJGL3s4tcHE6e-KPFu8z2cVryYNL0fMjslduRc_nDT8buagyTLm0dV0e65O6x9VQrwA6OzInWY_dSoA.webp"
 		}
 	];
 
@@ -332,7 +360,6 @@ class Character {
 		let targetId = $("#attackItem").val();
 		let targetCharacter = this.#characters.findIndex(character => character.id == targetId);
 		let demage = Number.parseInt(Math.random() * 100) + 1;
-		console.log(demage);
 		if (this.#characters[targetCharacter].hp - demage < 0) {
 			this.#characters[targetCharacter].hp = 0;
 		} else {
