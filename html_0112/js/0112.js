@@ -207,8 +207,8 @@ class Character {
 		$("#name").val("");
 		$("input[name='gender']").prop("checked", false);
 		$("#cls").val("W");
-		$("#hp").val(1);
-		$("#mp").val(1);
+		$("#hp").val(10);
+		$("#mp").val(10);
 		$("#str").val(1);
 		$("#int").val(1);
 		$("#dex").val(1);
