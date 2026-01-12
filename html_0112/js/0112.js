@@ -374,6 +374,7 @@ $(() => {
 	rpg.printList();
 	rpg.printAttackList();
 	rpg.clearInput();
+	rpg.printImg();
 
 	$(".btnAdd").click((e) => {
 		e.preventDefault();
