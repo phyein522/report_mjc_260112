@@ -209,6 +209,47 @@ class Character {
 		this.printList();
 		this.clearInput();
 	}
+
+	uptCharacter() {
+		if (this.checkInputData() === false) {
+			return;
+		}
+		let uptCharacter = {
+			id: Number.parseInt($("#id").val()),
+			name: $("#name").val(),
+			sx: $("#sx").val(),
+			cls: $("#cls").val(),
+			hp: Number.parseInt($("#hp").val()),
+			mp: Number.parseInt($("#mp").val()),
+			str: Number.parseInt($("#str").val()),
+			int: Number.parseInt($("#int").val()),
+			dex: Number.parseInt($("#dex").val()),
+			lux: Number.parseInt($("#lux").val()),
+			birthDate: $("#date").val(),
+			imgUrl: $("#imgUrl").val()
+		};
+		this.#characters[Number.parseInt($("#id").val())] = uptCharacter;
+		this.printList();
+		this.clearInput();
+		this.printImg();
+	}
+
+	setData2InputBox(getId) {
+		let findCharacter = this.#characters.find(character => character.id == getId);
+		$("#name").val(findCharacter.name);
+		$("#sx").val(findCharacter.sx);
+		$("#cls").val(findCharacter.cls);
+		$("#hp").val(findCharacter.hp);
+		$("#mp").val(findCharacter.mp);
+		$("#str").val(findCharacter.str);
+		$("#int").val(findCharacter.int);
+		$("#dex").val(findCharacter.dex);
+		$("#lux").val(findCharacter.lux);
+		$("#date").val(findCharacter.birthDate);
+		$("#imgUrl").val(findCharacter.imgUrl);
+		$(".showImage").attr("src", findCharacter.imgUrl);
+		this.printImg();
+	}
 }
 
 $(() => {
@@ -221,6 +262,7 @@ $(() => {
 	});
 	$(".btnUpt").click((e) => {
 		e.preventDefault();
+		rpg.uptCharacter();
 	});
 	$(".btnDel").click((e) => {
 		e.preventDefault();
@@ -229,6 +271,12 @@ $(() => {
 	$("#imgUrl").blur((e) => {
 		e.preventDefault();
 		rpg.printImg();
+	});
+
+	$(document).on("click", ".listDataRow", function (e) {
+		e.preventDefault();
+		let getId = $(e.currentTarget).children().first().text() * 1;
+		rpg.setData2InputBox(getId);
 	});
 });
 
