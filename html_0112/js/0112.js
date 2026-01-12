@@ -62,7 +62,7 @@ class Character {
 	}
 
 	printSx(characterSx) {
-		switch(characterSx) {
+		switch (characterSx) {
 			case "M":
 				return "남성";
 			case "W":
@@ -73,7 +73,7 @@ class Character {
 	}
 
 	printCls(characterCls) {
-		switch(characterCls) {
+		switch (characterCls) {
 			case "W":
 				return "전사";
 			case "M":
@@ -88,83 +88,83 @@ class Character {
 	}
 
 	checkInputData(...noCheck) {
-		if(!noCheck.includes("id")) {
+		if (!noCheck.includes("id")) {
 			if (this.#characters.findIndex(character => character.id == $("#id").val()) == -1) {
 				alert(`게임 목록에서 선택한 후 수정/삭제/공격하세요.`);
 				return false;
 			}
 		}
-		if(!noCheck.includes("name")) {
+		if (!noCheck.includes("name")) {
 			if ($("#name").val().length < 1 || $("#name").val().length > 10) {
 				alert(`닉네임은 1 ~ 10자 중에서 입력해 주세요.`);
 				$("#name").focus();
 				return false;
 			}
 		}
-		if(!noCheck.includes("sx")) {
+		if (!noCheck.includes("sx")) {
 			if ($("input[name='gender']:checked").val() != "M" && $("input[name='gender']:checked").val() != "W") {
 				alert(`남성 / 여성 중에서 성별을 선택하세요.`);
 				$("input[name='gender']").focus();
 				return false;
 			}
 		}
-		if(!noCheck.includes("cls")) {
+		if (!noCheck.includes("cls")) {
 			if ($("#cls").val() != "W" && $("#cls").val() != "M" && $("#cls").val() != "A" && $("#cls").val() != "B") {
 				alert(`전사 / 마법사 / 궁수 / 도적 중에서 직업을 선택하세요.`);
 				$("#cls").focus();
 				return false;
 			}
 		}
-		if(!noCheck.includes("hp")) {
+		if (!noCheck.includes("hp")) {
 			if (Number.parseInt($("#hp").val()) < 1 || Number.parseInt($("#hp").val()) > 100 || $("#hp").val() == '') {
 				alert(`HP에는 1 ~ 100 중에서 입력해주세요.`);
 				$("#hp").focus();
 				return false;
 			}
 		}
-		if(!noCheck.includes("mp")) {
+		if (!noCheck.includes("mp")) {
 			if (Number.parseInt($("#mp").val()) < 1 || Number.parseInt($("#mp").val()) > 100 || $("#mp").val() == '') {
 				alert(`MP에는 1 ~ 100 중에서 입력해주세요.`);
 				$("#mp").focus();
 				return false;
 			}
 		}
-		if(!noCheck.includes("str")) {
+		if (!noCheck.includes("str")) {
 			if (Number.parseInt($("#str").val()) < 1 || Number.parseInt($("#str").val()) > 100 || $("#str").val() == '') {
 				alert(`STR에는 1 ~ 100 중에서 입력해주세요.`);
 				$("#str").focus();
 				return false;
 			}
 		}
-		if(!noCheck.includes("int")) {
+		if (!noCheck.includes("int")) {
 			if (Number.parseInt($("#int").val()) < 1 || Number.parseInt($("#int").val()) > 100 || $("#int").val() == '') {
 				alert(`INT에는 1 ~ 100 중에서 입력해주세요.`);
 				$("#int").focus();
 				return false;
 			}
 		}
-		if(!noCheck.includes("dex")) {
+		if (!noCheck.includes("dex")) {
 			if (Number.parseInt($("#dex").val()) < 1 || Number.parseInt($("#dex").val()) > 100 || $("#dex").val() == '') {
 				alert(`DEX에는 1 ~ 100 중에서 입력해주세요.`);
 				$("#dex").focus();
 				return false;
 			}
 		}
-		if(!noCheck.includes("lux")) {
+		if (!noCheck.includes("lux")) {
 			if (Number.parseInt($("#lux").val()) < 1 || Number.parseInt($("#lux").val()) > 100 || $("#lux").val() == '') {
 				alert(`LUX에는 1 ~ 100 중에서 입력해주세요.`);
 				$("#lux").focus();
 				return false;
 			}
 		}
-		if(!noCheck.includes("birthDate")) {
-			if($("#birthDate").val() < "1900-01-01" || $("#birthDate").val() > "2100-01-01") {
+		if (!noCheck.includes("birthDate")) {
+			if ($("#birthDate").val() < "1900-01-01" || $("#birthDate").val() > "2100-01-01") {
 				alert(`날짜는 1900-01-01 ~ 2100-01-01 중에서 입력해주세요.`);
 				$("#birthDate").focus();
 				return false;
 			}
 		}
-		if(!noCheck.includes("imgUrl")) {
+		if (!noCheck.includes("imgUrl")) {
 			if ($("#imgUrl").val().indexOf("http") !== 0) {
 				alert("이미지 주소는 http 로 시작해야 합니다.");
 				$("#imgUrl").focus();
@@ -296,7 +296,7 @@ class Character {
 	}
 
 	attackSTR() {
-		if(this.checkInputData() == false) {
+		if (this.checkInputData() == false) {
 			return;
 		}
 		let attacker = this.#characters.findIndex(character => character.id == Number.parseInt($("#id").val()));
@@ -309,21 +309,34 @@ class Character {
 		}
 		this.printList();
 	}
-	
+
 	attackINT() {
-		if(this.checkInputData() == false) {
+		if (this.checkInputData() == false) {
 			return;
 		}
 		let attacker = this.#characters.findIndex(character => character.id == Number.parseInt($("#id").val()));
 		let targetId = $("#attackInt").val();
 		let targetCharacter = this.#characters.findIndex(character => character.id == targetId);
-		if(this.#characters[attacker].mp - 5 >= 0) {
+		if (this.#characters[attacker].mp - 5 >= 0) {
 			if (this.#characters[targetCharacter].hp - this.#characters[attacker].int < 0) {
 				this.#characters[targetCharacter].hp = 0;
 			} else {
 				this.#characters[targetCharacter].hp -= this.#characters[attacker].int;
 			}
 			this.#characters[attacker].mp -= 5;
+		}
+		this.printList();
+	}
+
+	attackITEM() {
+		let targetId = $("#attackItem").val();
+		let targetCharacter = this.#characters.findIndex(character => character.id == targetId);
+		let demage = Number.parseInt(Math.random() * 100) + 1;
+		console.log(demage);
+		if (this.#characters[targetCharacter].hp - demage < 0) {
+			this.#characters[targetCharacter].hp = 0;
+		} else {
+			this.#characters[targetCharacter].hp -= demage;
 		}
 		this.printList();
 	}
@@ -369,7 +382,6 @@ $(() => {
 	});
 	$(".atkbtn3").click((e) => {
 		e.preventDefault();
+		rpg.attackITEM();
 	});
 });
-
-//if((new Date("2026-01-12")).getTime() == (new Date("2026-01-12")).getTime()) { console.log("yes"); } else { console.log("no"); }
